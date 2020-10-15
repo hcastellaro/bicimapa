@@ -1,2 +1,2 @@
 # bicimapa
-Mapa para movilidad en bicileta
+Mapa para movilidad en bicicleta
