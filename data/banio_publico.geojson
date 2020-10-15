@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "banio_publico",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 18, "nombre": "Baño Público", "responsable": null, "direccion": "Plaza Belgrano", "barrio": "Centro", "zona": "Centro", "lav_desde1": "9", "lav_hasta1": "21", "lav_desde2": "", "lav_hasta2": "", "sab_desde1": "9", "sab_hasta1": "21", "sab_desde2": null, "sab_hasta2": null, "dom_desde2": null, "dom_hasta2": null, "telefono": null, "observaciones": null, "observa": null, "localidad": null, "fuente": null, "dom_desde_1": null, "dom_hasta1": null }, "geometry": { "type": "Point", "coordinates": [ -65.412641362973702, -24.786956704878293 ] } }
+]
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFJ2Y8MB2D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TFJ2Y8MB2D');
+    </script>
+    <meta charset="utf-8" />
+    <title>Alcaldía Bicicleta Salta</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/91822fdb88.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="boton_capas">
+        <i class="fas fa-layer-group"></i>
+    </div>
+    <div id="relevar">
+        <i class="fas fa-file-signature"></i>
+    </div>
+    <div id="panel_capas" style="font-size: small;">
+        <div class="row registro-capas">
+            <div class="col-10" onclick="encendido('ciclovia')">
+                Ciclovías
+            </div>
+            <div class="col-2" id="icono_ciclovia" style="display: block; color: seagreen;"><i class="fas fa-road"></i>
+            </div>
+        </div>
+        <div class="row registro-capas">
+            <div class="col-10" onclick="encendido('taller')">
+                Talleres / reparación
+            </div>
+            <div class="col-2" id="icono_taller" style="display: block; color: crimson;"><img
+                    src="./image/taller.png" />
+            </div>
+        </div>
+        <div class="row registro-capas">
+            <div class="col-10" onclick="encendido('gomeria')">
+                Gomerías
+            </div>
+            <div class="col-2" id="icono_gomeria" style="display: none; color: crimson;"><img
+                    src="./image/gomeria.png" />
+            </div>
+        </div>
+        <div class="row registro-capas">
+            <div class="col-10" onclick="encendido('venta_bicicleta')">
+                Venta de bicicletas y repuestos
+            </div>
+            <div class="col-2" id="icono_venta_bicicleta" style="display: none; color: crimson;"><img
+                    src="./image/venta_bicicleta.png" />
+            </div>
+        </div>
+        <div class="row registro-capas">
+            <div class="col-10" onclick="encendido('alquiler_bicicleta')">
+                Alquiler de bicicletas
+            </div>
+            <div class="col-2" id="icono_alquiler_bicicleta" style="display: none; color: crimson;"><img
+                    src="./image/alquiler.png" />
+            </div>
+        </div>
+        <div class="row registro-capas">
+            <div class="col-10" onclick="encendido('estacionamiento')">
+                Estacionamientos de bicicletas
+            </div>
+            <div class="col-2" id="icono_estacionamiento" style="display: none;"><img
+                    src="./image/estacionamiento.png" />
+            </div>
+        </div>
+        <div class="row registro-capas">
+            <div class="col-10" onclick="encendido('playa_estacionamiento')">
+                Playas de estacionamiento
+            </div>
+            <div class="col-2" id="icono_playa_estacionamiento" style="display: none;"><img
+                    src="./image/playa_estacionamiento.png" />
+            </div>
+        </div>
+        <div class="row registro-capas">
+            <div class="col-10" onclick="encendido('estacion_de_servicio')">
+                Estaciones de servicio
+            </div>
+            <div class="col-2" id="icono_estacion_de_servicio" style="display: none;"><img
+                    src="./image/estacion_de_servicio.png" />
+            </div>
+        </div>
+        <div class="row registro-capas">
+            <div class="col-10" onclick="encendido('banio_publico')">
+                Baños públicos
+            </div>
+            <div class="col-2" id="icono_banio_publico" style="display: none;"><img src="./image/banio_publico.png" />
+            </div>
+        </div>
+    </div>
+    <div id="logo">
+        <img src="./image/bycs_salta.png" width="100px"></img>
+    </div>
+    <div id="panel_alcaldia">
+        <div class="row d-flex" style="flex-wrap: nowrap;">
+            <div class="col-4" style="text-align: center;">
+                <img src="./image/bycs_salta.png" width="100px"></img>
+            </div>
+            <div class="col-8" style="text-align: center;vertical-align: middle;">
+                <h3>Alcaldía de la Bicicleta SLA</h3>
+            </div>
+        </div>
+        <p style="padding-top: 20px;">Somos parte del programa <b>Bicycle Mayor and Leaders Program de
+                <a href="https://www.instagram.com/bycs_org/" target="_blank">@bycs_org</a></b></p>
+        Alcaldesa de Salta: <b>Jimena Pérez Marchetta</b>
+        <a href="https://www.instagram.com/vervidrieras/" target="_blank"> @vervidrieras</a>
+    </div>
+    <div class="panel" id="modificar">
+        <h3>Modificar datos</h3>
+        <p>Muchas gracias por aportar para mejorar este mapa!</p>
+        <p>A continuación, vas a poder sumar información sobre:</p>
+        <ul>
+            <li>Talleres de reparación de bicicletas</li>
+            <li>Gomerías</li>
+            <li>Locales de venta de bicicletas y repuestos</li>
+            <li>Playas de estacionamiento</li>
+        </ul>
+        <p>Te invitamos a dejarnos tu mail, teléfono, perfil en redes sociales o cualquier dato de contacto antes de
+            empezar (no es obligatorio):</p>
+        <form action="#">
+            <div class="form-group">
+                <label for="usr">Dato de contacto:</label>
+                <input type="text" class="form-control" id="contacto" name="contacto">
+            </div>
+        </form>
+        <button class="btn btn-sm btn-info" id="boton_contacto" onclick="$('#relevamiento_intro').hide()">Volver al
+            mapa</button>
+        <button class="btn btn-sm btn-success" onclick="relevar()">Continuar con el relevamiento</button>
+        <br>
+        <p>Para comunicarte con la Alcaldía de la Bicicleta de Salta: <a
+                href="mailto:alcaldiabici.salta@gmail.com">alcaldiabici.salta@gmail.com</a></p>
+    </div>
+    <div class="panel" id="relevamiento_intro">
+        <h3>Relevamiento</h3>
+        <p>Muchas gracias por aportar para mejorar este mapa!</p>
+        <p>A continuación, vas a poder sumar información sobre:</p>
+        <ul>
+            <li>Talleres de reparación de bicicletas</li>
+            <li>Gomerías</li>
+            <li>Locales de venta de bicicletas y repuestos</li>
+            <li>Playas de estacionamiento</li>
+        </ul>
+        <p>Te invitamos a dejarnos tu mail, teléfono, perfil en redes sociales o cualquier dato de contacto antes de
+            empezar (no es obligatorio):</p>
+        <form action="#">
+            <div class="form-group">
+                <label for="usr">Dato de contacto:</label>
+                <input type="text" class="form-control" id="contacto" name="contacto">
+            </div>
+        </form>
+        <button class="btn btn-sm btn-info" id="boton_contacto" onclick="$('#relevamiento_intro').hide()">Volver al
+            mapa</button>
+        <button class="btn btn-sm btn-success" onclick="relevar()">Continuar con el relevamiento</button>
+        <br>
+        <p>Para comunicarte con la Alcaldía de la Bicicleta de Salta: <a
+                href="mailto:alcaldiabici.salta@gmail.com">alcaldiabici.salta@gmail.com</a></p>
+    </div>
+    <div class="panel" id="relevamiento">
+        <h5>Relevamiento de locales</h5>
+        <form action="#">
+            <div style="height: 70vh;overflow-y: auto;">
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group ">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control form-control-sm" id="nombre"
+                                placeholder="Nombre del establecimiento" name="nombre">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="bicicletero">Persona de contacto</label>
+                            <input type="text" class="form-control form-control-sm" id="bicicletero"
+                                placeholder="Nombre de bicicletero/a o referente" name="bicicletero">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group ">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" class="form-control form-control-sm" id="direccion"
+                                placeholder="Dirección del establecimiento" name="direccion">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="direccion">Barrio</label>
+                            <input type="text" class="form-control form-control-sm" id="barrio"
+                                placeholder="Nombre del barrio" name="barrio">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <b>SERVICIOS</b>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="venta" value="">Venta de bicicletas y
+                        repuestos
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="taller" value="">Reparación de bicicletas
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="gomeria" value="">Gomería
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="playa_estacionamiento" value="">Playa de
+                        estacionamiento de bicicletas
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="alquiler" value="">Alquiler de bicicletas
+                    </label>
+                </div>
+                <br>
+                <b>HORARIOS</b>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group ">
+                            <label for="horario_lav">Lunes a Viernes</label>
+                            <input type="text" class="form-control form-control-sm" id="horario_lav"
+                                placeholder="Horario" name="horario_lav">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="horario_s">Sábados</label>
+                            <input type="text" class="form-control form-control-sm" id="horario_s" placeholder="Horario"
+                                name="horario_s">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="horario_d">Domingos</label>
+                            <input type="text" class="form-control form-control-sm" id="horario_d" placeholder="Horario"
+                                name="horario_d">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <b>CONTACTO</b>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group ">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" class="form-control form-control-sm" id="telefono"
+                                placeholder="Número de teléfono" name="telefono">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group ">
+                            <label for="telefono">Email</label>
+                            <input type="text" class="form-control form-control-sm" id="email" placeholder="Email"
+                                name="email">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group ">
+                            <label for="telefono">Página Web</label>
+                            <input type="text" class="form-control form-control-sm" id="web" placeholder="Página Web"
+                                name="web">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="redes_ig">Instagram</label>
+                            <input type="text" class="form-control form-control-sm" id="redes_ig"
+                                placeholder="Perfil de Instagram" name="redes_ig">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="redes_fb">Facebook</label>
+                            <input type="text" class="form-control form-control-sm" id="redes_fb"
+                                placeholder="Perfil de Facebook" name="redes_fb">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="redes_fb">Twitter</label>
+                            <input type="text" class="form-control form-control-sm" id="redes_tw"
+                                placeholder="Perfil de Twitter" name="redes_tw">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-secondary" onclick="$('#relevamiento').hide()">Volver al mapa</button>
+            <button type="submit" id="myButton" class="btn btn-success">Enviar</button>
+        </form>
+    </div>
+    <div class="panel" id="relevamiento_respuesta">
+        <h3>Relevamiento</h3>
+        <p>Muchas gracias por tu aporte para mejorar este mapa!</p>
+        <button class="btn btn-info" onclick="$('#relevamiento_respuesta').hide()">Volver al mapa</button>
+        <button class="btn btn-success" onclick="relevar()">Enviar otro aporte</button>
+    </div>
+    <div class="panel" id="relevamiento_corroborar">
+        <h3>Modificar o validar información</h3>
+        <p>Muchas gracias por aportar para mejorar este mapa!</p>
+        <p>A continuación, vas a poder sumar información sobre:</p>
+        <div class="card bg-info text-white">
+            <div class="card-body">
+                <h4 id="capa_corroborar"></h4>
+                <p id="elemento_corroborar"></p>
+            </div>
+          </div>
+        
+        <p>Te invitamos a dejarnos tu mail, teléfono, perfil en redes sociales o cualquier dato de contacto antes de
+            empezar (no es obligatorio):</p>
+        <form action="#">
+            <div class="form-group">
+                <label for="usr">Tus datos de contacto:</label>
+                <input type="text" class="form-control" id="contacto_corroborar" name="contacto_corroborar">
+            </div>
+            <div class="form-group">
+                <label for="usr">Observaciones para modificar o validar este elemento del mapa:</label>
+                <input type="text" class="form-control" id="contenido_corroborar" name="contenido_corroborar">
+            </div>
+        </form>
+        <button class="btn btn-sm btn-info" id="boton_contacto" onclick="$('#relevamiento_intro').hide()">Volver al
+            mapa</button>
+        <button class="btn btn-sm btn-success" onclick="relevar_corroborar()">Enviar mi aporte</button>
+        <br>
+        <br>
+        <p>Para comunicarte con la Alcaldía de la Bicicleta de Salta: <a
+                href="mailto:alcaldiabici.salta@gmail.com">alcaldiabici.salta@gmail.com</a></p>
+    </div>
+
+</body>
+<script src="./scripts.js"></script>
+
+</html>

@@ -1,0 +1,21 @@
+{
+"type": "FeatureCollection",
+"name": "estacionamiento_publico",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "1", "direccion": "Av. Belgrano y Av. Sarmiento", "puestos": null, "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -65.416022472982604, -24.786718154569417 ] } },
+{ "type": "Feature", "properties": { "id": "2", "direccion": "Av. Belgrano y Mitre", "puestos": null, "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -65.410701376670104, -24.78760224679473 ] } },
+{ "type": "Feature", "properties": { "id": "3", "direccion": "Alvarado al 800", "puestos": 10, "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -65.412644619315515, -24.790890862867528 ] } },
+{ "type": "Feature", "properties": { "id": "4", "direccion": "Av. Belgrano y Dean Funes", "puestos": null, "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -65.407926872291952, -24.787499644538517 ] } },
+{ "type": "Feature", "properties": { "id": "5", "direccion": "Av. Belgrano y Adolfo Güemes", "puestos": null, "Tipo": null }, "geometry": null },
+{ "type": "Feature", "properties": { "id": "6", "direccion": "General Güemes y Baldomero Castro", "puestos": null, "Tipo": "MEB Revolución Verde" }, "geometry": { "type": "Point", "coordinates": [ -65.4126706531992, -24.786089709940441 ] } },
+{ "type": "Feature", "properties": { "id": "7", "direccion": "Av. Sarmiento y Av. Entre Ríos", "puestos": null, "Tipo": "MEB" }, "geometry": { "type": "Point", "coordinates": [ -65.415841417751082, -24.781585682379244 ] } },
+{ "type": "Feature", "properties": { "id": "8", "direccion": "Av. Belgrano 1300", "puestos": 10, "Tipo": "MEB" }, "geometry": { "type": "Point", "coordinates": [ -65.420913172655318, -24.786602726202741 ] } },
+{ "type": "Feature", "properties": { "id": "9", "direccion": "Centro Cívico Municipal", "puestos": 10, "Tipo": "MEB" }, "geometry": { "type": "Point", "coordinates": [ -65.420152208793283, -24.805186164777123 ] } },
+{ "type": "Feature", "properties": { "id": "10", "direccion": "Zuviría Frente al Teatro Provincial", "puestos": null, "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -65.409616396061082, -24.789016804438717 ] } },
+{ "type": "Feature", "properties": { "id": "11", "direccion": "Av. Paseo Güemes y Av. Uruguay", "puestos": null, "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -65.399871984338716, -24.786756627272002 ] } },
+{ "type": "Feature", "properties": { "id": "12", "direccion": "Esteco frente a Boliche Balderrama", "puestos": null, "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -65.418793015923185, -24.792842803052533 ] } },
+{ "type": "Feature", "properties": { "id": "13", "direccion": "Belgrano y 20 de Febrero", "puestos": 10, "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -65.413361830086302, -24.786998020887776 ] } },
+{ "type": "Feature", "properties": { "id": "14", "direccion": "Av. Sarmiento Hospital Materno Infantil", "puestos": null, "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -65.415007736855188, -24.772552534185781 ] } }
+]
+}

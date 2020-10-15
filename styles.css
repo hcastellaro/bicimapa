@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#boton_capas {
+    top: 3%;
+    left: 1%;
+    line-height: 1;
+    position: absolute;
+    text-align: center;
+    text-align: center;
+    background-color: darkslateblue;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    font-size: 1.5rem;
+    padding: 15px;
+}
+
+
+
+#boton_capas:hover {
+    background-color: white;
+    color: darkslateblue;
+}
+
+#herramientas {
+    top: 3%;
+    width: 55px;
+    margin-left: 10px;
+    position: absolute;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    background-color: coral;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    font-size: 150%;
+}
+
+#relevar {
+    bottom: 5%;
+    left: 1%;
+    line-height: 1;
+    position: absolute;
+    text-align: center;
+    text-align: center;
+    background-color: coral;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    font-size: 1.5rem;
+    padding: 15px;
+}
+
+#herramientas:hover {
+    background-color: white;
+    color: coral;
+}
+
+#panel_capas {
+    top: 15%;
+    width: 25%;
+    left: 1%;
+    height: 60vh;
+    position: absolute;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    color: black;
+    padding: 15px;
+    border-radius: 1%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    font-size: 20px;
+    display: none;
+}
+
+.registro-capas {
+    padding-top: 10px;
+}
+
+.registro-capas:hover {
+    color: coral;
+}
+
+#logo {
+    top: 1%;
+    right: 4%;
+    position: absolute;
+    align-items: center;
+}
+
+#panel_alcaldia {
+    top: 20%;
+    left: 2%;
+    right: 2%;
+    height: 40vh;
+    position: absolute;
+    padding-top: 10%;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 15px;
+    border-radius: 1%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    display: none;
+}
+
+#modificar {
+    top: 2%;
+    left: 1%;
+    right: 1%;
+    height: 95vh;
+    font-size: small;
+    position: absolute;
+    padding-top: 10%;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 15px;
+    border-radius: 1%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    display: none;
+    z-index: 3;
+}
+
+#relevamiento_intro {
+    top: 2%;
+    left: 1%;
+    right: 1%;
+    height: 95vh;
+    font-size: small;
+    position: absolute;
+    padding-top: 10%;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 15px;
+    border-radius: 1%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    display: none;
+    z-index: 3;
+}
+
+#relevamiento {
+    top: 2%;
+    left: 1%;
+    right: 1%;
+    height: 95vh;
+    position: absolute;
+    padding-top: 10%;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 15px;
+    border-radius: 1%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    display: none;
+    z-index: 3;
+}
+
+#relevamiento_respuesta {
+    top: 2%;
+    left: 1%;
+    right: 1%;
+    height: 95vh;
+    position: absolute;
+    padding-top: 10%;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 15px;
+    border-radius: 1%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    display: none;
+    z-index: 3;
+}
+
+#relevamiento_corroborar {
+    top: 2%;
+    left: 1%;
+    right: 1%;
+    height: 95vh;
+    position: absolute;
+    padding-top: 10%;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 15px;
+    border-radius: 1%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+    display: none;
+    z-index: 3;
+}
+
+.mapboxgl-popup-content {
+    width: fit-content;
+}
+
+
+@media only screen and (min-width: 600px) {
+
+    /* For desktop: */
+    #panel_capas {
+        width: 25%;
+    }
+
+    #herramientas {
+        left: 70px;
+    }
+
+    #logo {
+        right: 4%;
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    /* For mobile: */
+    #panel_capas {
+        width: 96%;
+    }
+
+    #herramientas {
+        left: 60px;
+    }
+
+    #logo {
+        right: 13%;
+    }
+
+    #logo img {
+        width: 75px;
+    }
+}
